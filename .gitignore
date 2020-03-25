@@ -11,3 +11,20 @@ codegenerator/backup
 
 # Doxygen
 doc/Doxygen/doc
+
+
+# jganser additions
+*.vscode
+*.cmake
+
+**/Makefile
+**/CMakeCache.txt
+**/bin
+**/build
+**/lib
+**/Poco
+**/CMakeFiles
+
+# install
+install
+install_manifest.txt

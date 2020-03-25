@@ -20,8 +20,10 @@ target_sources(${CURRENT_TARGET_NAME}
 )
 
 # Make sure this include dir can be found inside the project to include
+message(STATUS "### src_dir holds: '${SRC_DIR}'")
 target_include_directories(${CURRENT_TARGET_NAME} PUBLIC ${SRC_DIR})
 # Additional include directories
+message(STATUS "### path_include_root holds: '${PATH_INCLUDE_ROOT}'")
 target_include_directories(${CURRENT_TARGET_NAME} PUBLIC ${PATH_INCLUDE_ROOT})
 
 # SDCLib

@@ -172,7 +172,9 @@ public:
     }
 
     // disallow set operation for this state
-    InvocationState onStateChangeRequest(const RealTimeSampleArrayMetricState&, const OperationInvocationContext& p_oic) override
+    InvocationState onStateChangeRequest(
+		const RealTimeSampleArrayMetricState&, 
+		const OperationInvocationContext& p_oic) override
     {
     	// extract information from the incoming operation
     	DebugOut(DebugOut::Default, "ExampleProvider") << "Operation invoked. Handle: " << p_oic.operationHandle << std::endl;
@@ -196,7 +198,9 @@ public:
 	: SDCProviderMDStateHandler(p_descriptorHandle)
 	{ }
 
-	InvocationState onStateChangeRequest(const StringMetricState& p_changedState, const OperationInvocationContext& p_oic) override
+	InvocationState onStateChangeRequest(
+		const StringMetricState& p_changedState, 
+		const OperationInvocationContext& p_oic) override
 	{
 		notifyOperationInvoked(p_oic, InvocationState::Start);
 		// Do something if a state change is requested
@@ -209,7 +213,12 @@ public:
 	StringMetricState createState()
 	{
 		StringMetricState t_newState{HANDLE_STRING_METRIC};
-		t_newState.setMetricValue(StringMetricValue(MetricQuality(MeasurementValidity::Vld)).setValue("StringMetricValueInit"));
+		t_newState.setMetricValue(
+			StringMetricValue(
+				MetricQuality(
+					MeasurementValidity::Vld
+				)
+			).setValue("StringMetricValueInit"));
 	    return t_newState;
 	}
 
@@ -275,10 +284,15 @@ public:
         // MDS
         MdsDescriptor holdingDeviceSystem{MDS_DESCRIPTOR_HANDLE};
         holdingDeviceSystem
-        	.setType(CodedValue{"MDC_DEV_DOCU_POSE_MDS"}.addConceptDescription(LocalizedText{"DOCU POSE"}.setLang("en")))
-        	.setMetaData(
-                MetaData().addManufacturer(LocalizedText{SDCLib::Config::STR_SURGITAIX})
-                .setModelNumber("1")
+        	.setType(
+				CodedValue{"MDC_DEV_DOCU_POSE_MDS"}
+				.addConceptDescription(
+					LocalizedText{"DOCU POSE"}.setLang("en")
+				)
+			).setMetaData(
+                MetaData().addManufacturer(
+					LocalizedText{SDCLib::Config::STR_SURGITAIX}
+				).setModelNumber("1")
                 .addModelName(LocalizedText{"EndoTAIX"})
                 .addSerialNumber(SDCLib::Config::CURRENT_C_YEAR))
         	.addVmd(holdingDeviceModule);
@@ -344,7 +358,13 @@ public:
 		while (!isInterrupted())
 		{
 			{
-                updateStateValue(SampleArrayValue(MetricQuality(MeasurementValidity::Vld)).setSamples(t_sampleValues));
+                updateStateValue(
+					SampleArrayValue(
+						MetricQuality(
+							MeasurementValidity::Vld
+						)
+					).setSamples(t_sampleValues)
+				);
                 DebugOut(DebugOut::Default, "ExampleProvider") << "Produced stream chunk of size " << t_sampleValues.size() << ", index " << t_sampleIndex << std::endl;
 			}
 
