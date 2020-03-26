@@ -2,7 +2,7 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="7.10"
-	Name="TestUnitTest++.vsnet2003"
+	Name="TestUnitTest.vsnet2003"
 	ProjectGUID="{ACDF9A6A-874F-49E5-AB7C-74F8150BB4C7}"
 	Keyword="Win32Proj">
 	<Platforms>
@@ -31,10 +31,10 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="$(OutDir)/TestUnitTest++.vsnet2003.exe"
+				OutputFile="$(OutDir)/TestUnitTest.vsnet2003.exe"
 				LinkIncremental="2"
 				GenerateDebugInformation="TRUE"
-				ProgramDatabaseFile="$(OutDir)/TestUnitTest++.vsnet2003.pdb"
+				ProgramDatabaseFile="$(OutDir)/TestUnitTest.vsnet2003.pdb"
 				SubSystem="1"
 				TargetMachine="1"/>
 			<Tool
@@ -78,7 +78,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="$(OutDir)/TestUnitTest++.vsnet2003.exe"
+				OutputFile="$(OutDir)/TestUnitTest.vsnet2003.exe"
 				LinkIncremental="1"
 				GenerateDebugInformation="TRUE"
 				SubSystem="1"
@@ -163,7 +163,7 @@
 			RelativePath=".\src\tests\TestTimeConstraintMacro.cpp">
 		</File>
 		<File
-			RelativePath=".\src\tests\TestUnitTest++.cpp">
+			RelativePath=".\src\tests\TestUnitTest.cpp">
 		</File>
 		<File
 			RelativePath=".\src\tests\TestXmlTestReporter.cpp">

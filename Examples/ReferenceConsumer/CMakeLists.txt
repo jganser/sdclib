@@ -38,7 +38,10 @@ set_target_properties(  ${CURRENT_TARGET_NAME}
                         DEBUG_POSTFIX ${CMAKE_DEBUG_POSTFIX}
                         )
 # install
-install(TARGETS ${CURRENT_TARGET_NAME} CONFIGURATIONS ${CMAKE_BUILD_TYPE} RUNTIME DESTINATION ${PATH_INSTALL_RUNTIME})
+install(
+        TARGETS ${CURRENT_TARGET_NAME} 
+        CONFIGURATIONS ${CMAKE_BUILD_TYPE} 
+        RUNTIME DESTINATION ${PATH_INSTALL_RUNTIME})
 
 # Copy files to build folder
 configure_file(${CERT_DIR}/ca.pem   ${PATH_RUNTIME_OUTPUT}/ca.pem COPYONLY)

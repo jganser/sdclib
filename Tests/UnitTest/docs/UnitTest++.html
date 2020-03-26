@@ -1,26 +1,26 @@
 <html>
 <head>
-	<title>UnitTest++ in brief</title>
+	<title>UnitTest in brief</title>
 </head>
 <body>
-<h1>UnitTest++ in brief</h1>
+<h1>UnitTest in brief</h1>
 <h2>Introduction</h2>
-<p>This little document serves as bare-bones documentation for UnitTest++.</p>
+<p>This little document serves as bare-bones documentation for UnitTest.</p>
 
 <p>For background, goals and license details, see:</p>
 
 <ul>
-  <li><a href="http://unittest-cpp.sourceforge.net/">The UnitTest++ home page</a></li>
+  <li><a href="http://unittest-cpp.sourceforge.net/">The UnitTest home page</a></li>
   <li><a href="http://www.gamesfromwithin.com/articles/0603/000108.html">Noel Llopis' announcement</a></li>
 </ul>
 
-<p>The documentation, while sparse, aims to be practical, so it should give you enough info to get started using UnitTest++ as fast as possible.</p>
+<p>The documentation, while sparse, aims to be practical, so it should give you enough info to get started using UnitTest as fast as possible.</p>
 
-<h2>Building UnitTest++</h2>
-<p>Building UnitTest++ will be specific to each platform and build environment, but it should be straightforward.</p>
+<h2>Building UnitTest</h2>
+<p>Building UnitTest will be specific to each platform and build environment, but it should be straightforward.</p>
 
 <h3>Building with Visual Studio</h3>
-<p>If you are using Visual Studio, go for either of the provided .sln files, depending on version. There are no prefabricated solutions for versions earlier than VS.NET 2003, but we have had reports of people building UnitTest++ with at least VS.NET 2002.</p>
+<p>If you are using Visual Studio, go for either of the provided .sln files, depending on version. There are no prefabricated solutions for versions earlier than VS.NET 2003, but we have had reports of people building UnitTest with at least VS.NET 2002.</p>
 
 <h3>Building with Make</h3>
 <p>The bundled makefile is written to build with g++. It also needs <code>sed</code> installed in the path, and to be able to use the <code>mv</code> and <code>rm</code> shell commands. The makefile should be usable on most Posix-like platforms.</p>
@@ -28,17 +28,17 @@
 <p>Do "make all" to generate a library and test executable. A final build step runs all unit tests to make sure that the result works as expected.</p>
 
 <h3>Packaging</h3>
-<p>You'll probably want to keep the generated library in a shared space in source control, so you can reuse it for multiple test projects. A redistributable package of UnitTest++ would consist of the generated library file, and all of the header files in <code>UnitTest++/src/</code> and its per-platform subfolders. The <code>tests</code> directory only contains the unit tests for the library, and need not be included.</p>
+<p>You'll probably want to keep the generated library in a shared space in source control, so you can reuse it for multiple test projects. A redistributable package of UnitTest would consist of the generated library file, and all of the header files in <code>UnitTest/src/</code> and its per-platform subfolders. The <code>tests</code> directory only contains the unit tests for the library, and need not be included.</p>
 
-<h2>Using UnitTest++</h2>
-<p>The source code for UnitTest++ comes with a full test suite written <em>using</em> UnitTest++. This is a great place to learn techniques for testing. There is one sample .cpp file: <code>UnitTest++/src/tests/TestUnitTest++.cpp</code>. It covers most of UnitTest++'s features in an easy-to-grasp context, so start there if you want a quick overview of typical usage.</p>
+<h2>Using UnitTest</h2>
+<p>The source code for UnitTest comes with a full test suite written <em>using</em> UnitTest. This is a great place to learn techniques for testing. There is one sample .cpp file: <code>UnitTest/src/tests/TestUnitTest.cpp</code>. It covers most of UnitTest's features in an easy-to-grasp context, so start there if you want a quick overview of typical usage.</p>
 
 <h3>Getting started</h3>
-<p>Listed below is a minimal C++ program to run a failing test through UnitTest++.</p>
+<p>Listed below is a minimal C++ program to run a failing test through UnitTest.</p>
 
 <pre>
   // test.cpp
-  #include &lt;UnitTest++.h&gt;
+  #include &lt;UnitTest.h&gt;
 
   TEST(FailSpectacularly)
   {
@@ -51,9 +51,9 @@
   }
 </pre>
 
-<p><code>UnitTest++.h</code> is a facade header for UnitTest++, so including that should get you all features of the library. All classes and free functions are placed in namespace <code>UnitTest</code>, so you need to either qualify their full names (as with <code>RunAllTests()</code> in the example) or add a <code>using namespace UnitTest;</code> statement in your .cpp files. Note that any mention of UnitTest++ functions and classes in this document assume that the <code>UnitTest</code> namespace has been opened.</p>
+<p><code>UnitTest.h</code> is a facade header for UnitTest, so including that should get you all features of the library. All classes and free functions are placed in namespace <code>UnitTest</code>, so you need to either qualify their full names (as with <code>RunAllTests()</code> in the example) or add a <code>using namespace UnitTest;</code> statement in your .cpp files. Note that any mention of UnitTest functions and classes in this document assume that the <code>UnitTest</code> namespace has been opened.</p>
 
-<p>Compiling and linking this program with UnitTest++'s static library into an executable, and running it, will produce the following output (details may vary):</p>
+<p>Compiling and linking this program with UnitTest's static library into an executable, and running it, will produce the following output (details may vary):</p>
 
 <pre>
   .\test.cpp(5): error: Failure in FailSpectacularly: false
@@ -61,7 +61,7 @@
   Test time: 0.00 seconds.
 </pre>
 
-<p>UnitTest++ attempts to report every failure in an IDE-friendly format, depending on platform (e.g. you can double-click it in Visual Studio's error list.) The exit code will be the number of failed tests, so that a failed test run always returns a non-zero exit code.</p>
+<p>UnitTest attempts to report every failure in an IDE-friendly format, depending on platform (e.g. you can double-click it in Visual Studio's error list.) The exit code will be the number of failed tests, so that a failed test run always returns a non-zero exit code.</p>
 
 <h3>Test macros</h3>
 <p>To add a test, simply put the following code in a .cpp file of your choice:</p>
@@ -109,10 +109,10 @@
   }
 </pre>
 
-<p>This will place the tests into a C++ namespace called <code>YourSuiteName</code>, and make the suite name available to UnitTest++. <code>RunAllTests()</code> can be called for a specific suite name, so you can use this to build named groups of tests to be run together.</p>
+<p>This will place the tests into a C++ namespace called <code>YourSuiteName</code>, and make the suite name available to UnitTest. <code>RunAllTests()</code> can be called for a specific suite name, so you can use this to build named groups of tests to be run together.</p>
 
 <h3>Simple check macros</h3>
-<p>In test cases, we want to check the results of our system under test. UnitTest++ provides a number of check macros that handle comparison and proper failure reporting.</p>
+<p>In test cases, we want to check the results of our system under test. UnitTest provides a number of check macros that handle comparison and proper failure reporting.</p>
 
 <p>The most basic variety is the boolean <code>CHECK</code> macro:</p>
 
@@ -180,12 +180,12 @@
   CHECK_THROW(throw TestException(), TestException); // succeeds
 </pre>
 
-<p>UnitTest++ natively catches exceptions if your test code doesn't. So if your code under test throws any exception UnitTest++ will fail the test and report either using the <code>what()</code> method for <code>std::exception</code> derivatives or just a plain message for unknown exception types.</p>
+<p>UnitTest natively catches exceptions if your test code doesn't. So if your code under test throws any exception UnitTest will fail the test and report either using the <code>what()</code> method for <code>std::exception</code> derivatives or just a plain message for unknown exception types.</p>
 
-<p>Should your test or code raise an irrecoverable error (an Access Violation on Win32, for example, or a signal on Linux), UnitTest++ will attempt to map them to an exception and fail the test, just as for other unhandled exceptions.</p>
+<p>Should your test or code raise an irrecoverable error (an Access Violation on Win32, for example, or a signal on Linux), UnitTest will attempt to map them to an exception and fail the test, just as for other unhandled exceptions.</p>
 
 <h3>Time constraints</h3>
-<p>UnitTest++ can fail a test if it takes too long to complete, using so-called time constraints.</p>
+<p>UnitTest can fail a test if it takes too long to complete, using so-called time constraints.</p>
 
 <p>They come in two flavors; <em>local</em> and <em>global</em> time constraints.</p>
 
@@ -208,7 +208,7 @@
 
 <p>The test will fail if the "Do time-critical stuff" block takes longer than 50 ms to complete. The time-consuming setup and teardown are not measured, since the time constraint is scope-bound. It's perfectly valid to have multiple local time constraints in the same test, as long as there is only one per block.</p>
 
-<p>A global time constraint, on the other hand, requires that all of the tests in a test run are faster than a specified amount of time. This allows you, when you run a suite of tests, to ask UnitTest++ to fail it entirely if any test exceeds the global constraint. The max time is passed as a parameter to an overload of <code>RunAllTests()</code>.</p>
+<p>A global time constraint, on the other hand, requires that all of the tests in a test run are faster than a specified amount of time. This allows you, when you run a suite of tests, to ask UnitTest to fail it entirely if any test exceeds the global constraint. The max time is passed as a parameter to an overload of <code>RunAllTests()</code>.</p>
 
 <p>If you want to use a global time constraint, but have one test that is notoriously slow, you can exempt it from inspection by using the <code>UNITTEST_TIME_CONSTRAINT_EXEMPT</code> macro anywhere inside the test body.</p>
 
@@ -252,7 +252,7 @@
 
 <p>Each of the <code>Test*.cpp</code> files will contain one or more <code>TEST</code> macro incantations with the associated test code. There are no source-level dependencies between <code>Main.cpp</code> and <code>Test*.cpp</code>, as the <code>TEST</code> macro handles the registration and setup necessary for <code>RunAllTests()</code> to find all tests compiled into the same final executable.</p>
 
-<p>UnitTest++ does not require this structure, even if this is how the library itself does it. As long as your test project contains one or more <code>TESTs</code> and calls <code>RunAllTests()</code> at one point or another, it will be handled by UnitTest++.</p>
+<p>UnitTest does not require this structure, even if this is how the library itself does it. As long as your test project contains one or more <code>TESTs</code> and calls <code>RunAllTests()</code> at one point or another, it will be handled by UnitTest.</p>
 
 <p>It's common to make the generated executable start as a post-build step, so that merely building your test project will run the tests as well. Since the exit code is the count of failures, a failed test will generally break the build, as most build engines will fail a build if any step returns a non-zero exit code.</p>
 

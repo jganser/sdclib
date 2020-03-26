@@ -14,15 +14,15 @@
 #endif
 
 #ifdef TEST
-    #error UnitTest++ redefines TEST
+    #error UnitTest redefines TEST
 #endif
 
 #ifdef TEST_EX
-	#error UnitTest++ redefines TEST_EX
+	#error UnitTest redefines TEST_EX
 #endif
 
 #ifdef TEST_FIXTURE_EX
-	#error UnitTest++ redefines TEST_FIXTURE_EX
+	#error UnitTest redefines TEST_FIXTURE_EX
 #endif
 
 #define SUITE(Name)                                                         \

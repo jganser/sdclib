@@ -7,9 +7,9 @@
  */
 
 // Testingframework
-#include "UnitTest++/src/UnitTest++.h"
-#include "UnitTest++/src/TestRunner.h"
-#include "UnitTest++/src/TestReporterStdout.h"
+#include "UnitTest/src/UnitTest.h"
+#include "UnitTest/src/TestRunner.h"
+#include "UnitTest/src/TestReporterStdout.h"
 
 int runAllTests() {
 	return UnitTest::RunAllTests();

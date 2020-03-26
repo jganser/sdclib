@@ -15,7 +15,7 @@
 #include "SDCLib/Util/DebugOut.h"
 #include "SDCLib/Util/Task.h"
 #include "../AbstractSDCLibFixture.h"
-#include "../UnitTest++/src/UnitTest++.h"
+#include "../UnitTest/src/UnitTest.h"
 
 #include "OSELib/SDC/ServiceManager.h"
 

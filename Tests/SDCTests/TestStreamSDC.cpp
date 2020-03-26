@@ -56,7 +56,7 @@
 
 
 #include "../AbstractSDCLibFixture.h"
-#include "../UnitTest++/src/UnitTest++.h"
+#include "../UnitTest/src/UnitTest.h"
 
 
 using namespace SDCLib;

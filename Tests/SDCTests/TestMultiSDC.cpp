@@ -11,7 +11,7 @@
 #include "SDCLib/Data/SDC/MDIB/VmdDescriptor.h"
 #include "SDCLib/Util/DebugOut.h"
 #include "../AbstractSDCLibFixture.h"
-#include "../UnitTest++/src/UnitTest++.h"
+#include "../UnitTest/src/UnitTest.h"
 
 #include "OSELib/SDC/ServiceManager.h"
 

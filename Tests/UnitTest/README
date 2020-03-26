@@ -1,13 +1,13 @@
-UnitTest++ README
+UnitTest README
 Version: v1.4
 Last update: 2008-10-30
 
-UnitTest++ is free software. You may copy, distribute, and modify it under
+UnitTest is free software. You may copy, distribute, and modify it under
 the terms of the License contained in the file COPYING distributed
 with this package. This license is the same as the MIT/X Consortium
 license.
 
-See src/tests/TestUnitTest++.cpp for usage.
+See src/tests/TestUnitTest.cpp for usage.
 
 Authors:
 Noel Llopis (llopis@convexhull.com) 
@@ -51,7 +51,7 @@ Version 1.2 (2006-10-29)
   in Config.h
 - Added named test suites
 - Added CHECK_ARRAY2D_CLOSE 
-- Posix library name is libUnitTest++.a now
+- Posix library name is libUnitTest.a now
 - Floating point numbers are postfixed with f in the failure reports
 
 Version 1.1 (2006-04-18)

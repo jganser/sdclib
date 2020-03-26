@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="7.10"
-	Name="UnitTest++.vsnet2003"
+	Name="UnitTest.vsnet2003"
 	ProjectGUID="{7E5DD804-EC63-4FA5-BB6D-53DA86806EF5}"
-	RootNamespace="UnitTest++.vsnet2003"
+	RootNamespace="UnitTest.vsnet2003"
 	Keyword="Win32Proj">
 	<Platforms>
 		<Platform
@@ -32,7 +32,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="$(OutDir)/UnitTest++.vsnet2003.lib"/>
+				OutputFile="$(OutDir)/UnitTest.vsnet2003.lib"/>
 			<Tool
 				Name="VCMIDLTool"/>
 			<Tool
@@ -70,7 +70,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="$(OutDir)/UnitTest++.vsnet2003.lib"/>
+				OutputFile="$(OutDir)/UnitTest.vsnet2003.lib"/>
 			<Tool
 				Name="VCMIDLTool"/>
 			<Tool
@@ -212,7 +212,7 @@
 			RelativePath=".\src\TimeHelpers.h">
 		</File>
 		<File
-			RelativePath=".\src\UnitTest++.h">
+			RelativePath=".\src\UnitTest.h">
 		</File>
 		<File
 			RelativePath=".\src\XmlTestReporter.cpp">
