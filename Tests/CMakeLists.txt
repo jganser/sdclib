@@ -4,6 +4,6 @@
 message(STATUS "### Configuring Tests...")
 
 # Add all bins/libs
-add_subdirectory(UnitTest++)
+add_subdirectory(UnitTest)
 
 
