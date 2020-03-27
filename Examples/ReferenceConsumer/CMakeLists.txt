@@ -27,6 +27,7 @@ target_include_directories(${CURRENT_TARGET_NAME} PUBLIC ${PATH_INCLUDE_ROOT})
 
 # SDCLib
 target_link_libraries(${CURRENT_TARGET_NAME} PRIVATE SDCLib)
+#message(STATUS "#$#$#$# sdclib include dirs: ${SDCLib_INCLUDE_DIRS}")
 
 
 # build

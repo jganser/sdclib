@@ -37,7 +37,8 @@ set(POCO_LIBRARIES Foundation Net NetSSL Crypto Util)
 set(POCO_COMPILE_DEFINITIONS POCO_NO_AUTOMATIC_LIBS $<$<CXX_COMPILER_ID:MSVC>:Foundation_EXPORTS Net_EXPORTS NetSSL_EXPORTS Crypto_EXPORTS>)
 
 message(STATUS "### Configuring Poco...")
-add_subdirectory(${POCO_SEARCH_DIRS} Dependencies/Poco)
+message(STATUS "#$#$#$ POCO binary path ${SDCLib_ROOT_DIR}/Dependencies/Poco")
+add_subdirectory(${POCO_SEARCH_DIRS} "${SDCLib_ROOT_DIR}/Dependencies/Poco")
 message(STATUS "### Configuring Poco done!")
 
 # Set FOUND - Flag
