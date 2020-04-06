@@ -277,7 +277,7 @@ bool ends_with(const std::string & value, const std::string & ending)
 
 int main(int argc, char *argv[])
 {
-	DebugOut::DEBUG_LEVEL = DebugOut::Silent;
+	DebugOut::DEBUG_LEVEL = DebugOut::Full;
 
 	bool useTLS = false;
 	std::string endpointEnding{""};
