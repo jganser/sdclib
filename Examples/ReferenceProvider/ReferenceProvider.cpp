@@ -535,7 +535,7 @@ public:
 
 int main(int argc, char *argv[])
 {
-	DebugOut::DEBUG_LEVEL = DebugOut::Default;
+	DebugOut::DEBUG_LEVEL = DebugOut::Full;
 	bool useTLS{false};
 
 	if(argc == 2)
